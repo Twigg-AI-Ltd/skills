@@ -1,7 +1,7 @@
 # Twigg agent skills
 
 A skill that teaches coding agents (Claude Code, Codex and others that read
-`SKILL.md`) how to build on [Twigg](https://twigg.ai): when it fits, how to get
+`SKILL.md`) how to build on [Twigg](https://twigg.ai/?utm_source=agent-skill&utm_medium=readme): when it fits, how to get
 started, and the practices that keep an integration small.
 
 Twigg is a hosted context store and context engine. It keeps every message,
@@ -59,7 +59,7 @@ changed since it was written.
 
 ## You will need
 
-An API key from https://twigg.ai/dashboard/api-keys, set as `TWIGG_API_KEY`.
+An API key from https://twigg.ai/dashboard/api-keys?utm_source=agent-skill&utm_medium=readme, set as `TWIGG_API_KEY`.
 The skill never asks you to paste it into the chat.
 
 ## License

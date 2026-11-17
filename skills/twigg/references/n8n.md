@@ -18,8 +18,8 @@ follow it.
 
 ## The outline
 
-1. Create a Twigg account at https://twigg.ai and add credit.
-2. Create an API key at https://twigg.ai/dashboard/api-keys.
+1. Create a Twigg account at https://twigg.ai/?utm_source=agent-skill&utm_medium=skill&utm_content=n8n and add credit.
+2. Create an API key at https://twigg.ai/dashboard/api-keys?utm_source=agent-skill&utm_medium=skill&utm_content=n8n.
 3. Install the **Twigg** node: it is a verified community node, under
    **More from the community** in the nodes panel (owner or admin only). On
    self-hosted n8n without verified nodes: **Settings → Community nodes →

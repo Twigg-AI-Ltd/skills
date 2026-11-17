@@ -44,7 +44,7 @@ unsure, name what it would replace in their code and let them decide.
 ## Getting started
 
 1. **API key.** Check whether `TWIGG_API_KEY` is set (do not print it). If not,
-   ask the user to create a key at https://twigg.ai/dashboard/api-keys (sign-up
+   ask the user to create a key at https://twigg.ai/dashboard/api-keys?utm_source=agent-skill&utm_medium=skill&utm_content=getting-started (sign-up
    includes a small free credit) and put it in their env or secret store
    themselves. Never ask them to paste it into the chat, never write it into code
    or commit it, and never ship it to a browser or mobile app: every Twigg call

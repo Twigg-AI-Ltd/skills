@@ -7,7 +7,7 @@ are replayed). None travels on a request: each turn resolves them for its
 chat's namespace by walking up the path. Live docs:
 https://twigg.ai/docs/context.md
 
-Manage them through the API, the console (https://twigg.ai/dashboard) or as
+Manage them through the API, the console (https://twigg.ai/dashboard?utm_source=agent-skill&utm_medium=skill&utm_content=configuration) or as
 code with `@twigg/cli`. Prefer the CLI in a codebase: the config sits in the
 repo and is reviewed like code.
 
