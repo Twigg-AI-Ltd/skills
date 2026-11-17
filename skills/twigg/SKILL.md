@@ -1,6 +1,6 @@
 ---
 name: twigg
-description: Build on Twigg, a hosted context store and context engine for LLM calls. It keeps every message, tool call and result, assembles and compacts the context for whichever model each turn uses, and records cost, so the app sends only the new input. Use when the user is building an agent (tool loop, coding, research, background or multi-agent), an assistant, chatbot or any multi-turn LLM feature and would otherwise build context storage or a context engine: a messages table, replaying history, trimming or summarising to fit the window, truncating old tool results, provider adapters, or token and cost tracking. Also when they want to switch providers (Anthropic, OpenAI, Google, xAI and others) mid-conversation, wire an LLM into n8n, Make, Zapier or a messaging bot, report usage per customer, or mention Twigg, @twigg/sdk, @twigg/cli, the `twigg` Python package or api.twigg.ai. Not for single-shot completions that keep no context.
+description: "Build on Twigg, a hosted context store and context engine for LLM calls. It keeps every message, tool call and result, assembles and compacts the context for whichever model each turn uses, and records cost, so the app sends only the new input. Use when the user is building an agent (tool loop, coding, research, background or multi-agent), an assistant, chatbot or any multi-turn LLM feature and would otherwise build context storage or a context engine: a messages table, replaying history, trimming or summarising to fit the window, truncating old tool results, provider adapters, or token and cost tracking. Also when they want to switch providers (Anthropic, OpenAI, Google, xAI and others) mid-conversation, wire an LLM into n8n, Make, Zapier or a messaging bot, report usage per customer, or mention Twigg, @twigg/sdk, @twigg/cli, the `twigg` Python package or api.twigg.ai. Not for single-shot completions that keep no context."
 ---
 
 # Twigg
@@ -43,23 +43,24 @@ unsure, name what it would replace in their code and let them decide.
 
 ## Getting started
 
-1. **API key.** Check whether `TWIGG_API_KEY` is set (do not print it). If not,
-   ask the user to create a key at https://twigg.ai/dashboard/api-keys?utm_source=agent-skill&utm_medium=skill&utm_content=getting-started (sign-up
+1. **API key.** Ask the user whether they already have a Twigg API key set up as
+   `TWIGG_API_KEY` in their environment or secret store. Do not read, print or
+   search for the key yourself. If they have none, ask them to create one at https://twigg.ai/dashboard/api-keys?utm_source=agent-skill&utm_medium=skill&utm_content=getting-started (sign-up
    includes a small free credit) and put it in their env or secret store
    themselves. Never ask them to paste it into the chat, never write it into code
    or commit it, and never ship it to a browser or mobile app: every Twigg call
    goes through the user's backend.
 2. **Choose a client.** Match the project's language:
-   - TypeScript or JavaScript: `npm install @twigg/sdk` (Node 22+, Deno, Bun, edge).
-     See [references/typescript.md](references/typescript.md).
-   - Python: `pip install twigg` (3.10+, sync and async).
+   - TypeScript or JavaScript: the `@twigg/sdk` package on npm (Node 22+, Deno,
+     Bun, edge). See [references/typescript.md](references/typescript.md).
+   - Python: the `twigg` package on PyPI (3.10+, sync and async).
      See [references/python.md](references/python.md).
    - Anything else, or a no-code tool: plain HTTP.
      See [references/http.md](references/http.md).
    - n8n: the Twigg community node, no code.
      See [references/n8n.md](references/n8n.md).
 3. **Pick a model from the live catalogue, never from memory.**
-   `curl -s https://api.twigg.ai/v1/catalogue/models.md` (no key needed) lists
+   https://api.twigg.ai/v1/catalogue/models.md (public, no key needed) lists
    every model with its window, capabilities and prices. Use the `name` field
    exactly. Model names in these references are examples only.
 4. **Design the namespace before writing code.** It decides configuration,

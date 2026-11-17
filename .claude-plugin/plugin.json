@@ -1,7 +1,7 @@
 {
   "name": "twigg",
   "displayName": "Twigg",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Build on Twigg, a hosted context store and context engine for agents, assistants and chatbots. Tells your agent when Twigg fits, how to get started, and how to build on it well.",
   "author": {
     "name": "Twigg AI Ltd",
