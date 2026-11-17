@@ -4,8 +4,10 @@ A skill that teaches coding agents (Claude Code, Codex and others that read
 `SKILL.md`) how to build on [Twigg](https://twigg.ai): when it fits, how to get
 started, and the practices that keep an integration small.
 
-Twigg is a hosted API that stores each conversation and builds every model
-call, so your code sends only the new input of each turn and never the history.
+Twigg is a hosted context store and context engine. It keeps every message,
+tool call and result, and builds each model call from them, so an agent,
+assistant or chatbot sends only the new input of each turn and never the
+history.
 
 ## Install
 
@@ -42,7 +44,7 @@ skills/twigg/
   SKILL.md                  when to use Twigg, getting started, the loop, core rules
   references/
     tips.md                 structure, configuration, turns, cleanup
-    patterns.md             web chat, messaging bots, tool agents, multi-tenant, batch, migration
+    patterns.md             agents, web chat, messaging bots, multi-tenant, batch, migration
     typescript.md           @twigg/sdk recipes
     python.md               twigg (PyPI) recipes
     http.md                 plain HTTP and the stream

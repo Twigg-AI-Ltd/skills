@@ -6,21 +6,29 @@
   },
   "metadata": {
     "description": "Agent skills for building on the Twigg API",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "plugins": [
     {
       "name": "twigg",
-      "description": "Build LLM features on Twigg: hosted conversation history, context management and multi-provider model calls. Tells your agent when Twigg fits, how to get started, and how to build on it well.",
+      "description": "Build on Twigg, a hosted context store and context engine for agents, assistants and chatbots. Tells your agent when Twigg fits, how to get started, and how to build on it well.",
       "source": "./",
       "strict": false,
-      "version": "0.1.0",
+      "version": "0.1.1",
       "homepage": "https://twigg.ai",
       "repository": "https://github.com/Twigg-AI-Ltd/skills",
       "license": "MIT",
-      "keywords": ["llm", "chat", "agents", "context", "api"],
+      "keywords": [
+        "llm",
+        "chat",
+        "agents",
+        "context",
+        "api"
+      ],
       "category": "development",
-      "skills": ["./skills/twigg"]
+      "skills": [
+        "./skills/twigg"
+      ]
     }
   ]
 }

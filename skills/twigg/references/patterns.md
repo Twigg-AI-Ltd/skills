@@ -3,6 +3,23 @@
 Worked shapes for common integrations. Each lists what to build, what not to
 build, and the calls involved. Code is in the client references.
 
+## Agents (tool loop, coding, research, background)
+
+- Define tools with the SDK's `tool()` / `@tool` and call
+  `chat.runTools(prompt, { tools })` / `chat.run_tools(prompt, tools=[...])`. It
+  loops until the model stops calling tools; invalid arguments and thrown errors
+  go back to the model so it can correct itself.
+- One chat per agent run. Name it with `external_id` set to the run or job id so
+  a restarted worker finds the same chat without storing anything.
+- For long jobs, pass `idempotencyKey: "job-<id>"` so a restarted process
+  recovers turns that already ran instead of re-running them.
+- Tools the whole namespace should have: publish them to config and answer them
+  with `handlers: { name: fn }`.
+- Large tool results replayed many turns later are the main cost driver. Add a
+  retention rule that truncates that tool's results past a threshold, not code.
+- Mark results from untrusted sources (web pages, user uploads) with
+  `trust: "untrusted"`. It sets hygiene limits; it is not an injection defence.
+
 ## Web chat app (sidebar of conversations, streaming replies)
 
 - **Namespace:** `app/<user_hash>`, or `app/<org_hash>/<user_hash>` for teams.
@@ -32,21 +49,6 @@ build, and the calls involved. Code is in the client references.
   `Retry-After` and resend, or queue per chat.
 - **Bot persona and tools:** publish once to the `support` namespace.
 - **Separate bots:** different prefixes and namespaces (`support:`, `sales:`).
-
-## Tool-using agent
-
-- Define tools with the SDK's `tool()` / `@tool` and call
-  `chat.runTools(prompt, { tools })` / `chat.run_tools(prompt, tools=[...])`. It
-  loops until the model stops calling tools; invalid arguments and thrown errors
-  go back to the model so it can correct itself.
-- For long jobs, pass `idempotencyKey: "job-<id>"` so a restarted process
-  recovers turns that already ran instead of re-running them.
-- Tools the whole namespace should have: publish them to config and answer them
-  with `handlers: { name: fn }`.
-- Large tool results replayed many turns later are the main cost driver. Add a
-  retention rule that truncates that tool's results past a threshold, not code.
-- Mark results from untrusted sources (web pages, user uploads) with
-  `trust: "untrusted"`. It sets hygiene limits; it is not an injection defence.
 
 ## Multi-tenant SaaS (your customers' users talk to an assistant)
 
