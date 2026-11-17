@@ -1,7 +1,7 @@
 # Plain HTTP
 
 Base URL `https://api.twigg.ai`. Every customer endpoint is under `/api/v1` and
-takes `Authorization: Bearer $TWIGG_API_KEY`. Bodies are JSON. The OpenAPI 3.1
+takes the API key as a bearer token (`Authorization: Bearer <key>`). Bodies are JSON. The OpenAPI 3.1
 spec is at https://api.twigg.ai/openapi.json; prefer generating a client from it
 over hand-writing types. Full reference: https://twigg.ai/docs/api.md
 
@@ -10,12 +10,18 @@ or `GET /api/v1/models`. The names here are examples.
 
 ## Smoke test
 
-```bash
-curl -s https://api.twigg.ai/api/v1/chats/external/dev-smoke/responses \
-  -H "Authorization: Bearer $TWIGG_API_KEY" -H "Content-Type: application/json" \
-  -d '{"model":"claude-opus-5","stream":false,"idempotency_key":"smoke-1",
-       "chat":{"namespace":"dev/smoke"},
-       "input":[{"type":"prompt","text":"Say hello in five words."}]}'
+The user sends this from their own terminal or HTTP client, with their key in
+the `Authorization` header. Do not read the key or run the request with it
+yourself; hand the user the request and ask what came back.
+
+```http
+POST https://api.twigg.ai/api/v1/chats/external/dev-smoke/responses
+Authorization: Bearer <your Twigg API key>
+Content-Type: application/json
+
+{"model": "claude-opus-5", "stream": false, "idempotency_key": "smoke-1",
+ "chat": {"namespace": "dev/smoke"},
+ "input": [{"type": "prompt", "text": "Say hello in five words."}]}
 ```
 
 ## Create a chat

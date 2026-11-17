@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Agent skills for building on the Twigg API",
-    "version": "0.1.4"
+    "version": "0.1.5"
   },
   "plugins": [
     {
       "name": "twigg",
       "description": "Build on Twigg, a hosted context store and context engine for agents, assistants and chatbots. Tells your agent when Twigg fits, how to get started, and how to build on it well.",
       "source": "./",
-      "version": "0.1.4",
+      "version": "0.1.5",
       "homepage": "https://twigg.ai",
       "repository": "https://github.com/Twigg-AI-Ltd/skills",
       "license": "MIT",
