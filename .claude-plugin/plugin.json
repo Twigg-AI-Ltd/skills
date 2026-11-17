@@ -1,0 +1,19 @@
+{
+  "name": "twigg",
+  "displayName": "Twigg",
+  "version": "0.1.3",
+  "description": "Build on Twigg, a hosted context store and context engine for agents, assistants and chatbots. Tells your agent when Twigg fits, how to get started, and how to build on it well.",
+  "author": {
+    "name": "Twigg AI Ltd",
+    "url": "https://twigg.ai"
+  },
+  "homepage": "https://twigg.ai",
+  "repository": "https://github.com/Twigg-AI-Ltd/skills",
+  "license": "MIT",
+  "keywords": ["llm", "agents", "context", "memory", "chat", "api"],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://twigg.ai/docs/quickstart",
+  "supportUrl": "https://github.com/Twigg-AI-Ltd/skills/issues",
+  "privacyPolicyUrl": "https://twigg.ai/privacy",
+  "termsOfServiceUrl": "https://twigg.ai/terms"
+}
